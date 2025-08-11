@@ -1,3 +1,7 @@
+# jwt-authentication
+
+Project for learning JWT authentication
+
 ## Project Structure
 
 ```
@@ -39,3 +43,34 @@ jwt-authentication
                 error.go
                 user.go
 ```
+
+## Project setup
+
+1. Declare `config/local.yml` file:
+
+   ```
+   env: "dev"
+   http_server:
+   address: ":8000"
+   database:
+   pg:
+       user: "postgres"
+       password: "secret"
+       dbname: "db"
+       port: "5432"
+       host: "db"
+   key:
+       hmac_key: "secret key"
+   ```
+
+2. Declare `.env` file:
+   ```
+   CONFIG_PATH=config/local.yml
+   POSTGRES_USER=postgres
+   POSTGRES_PASSWORD=secret
+   POSTGRES_DB=db
+   ```
+
+## Run project
+
+Run `docker compose up --build -d`
